@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Charles Atugonza | UX Research Portfolio</title>
+    <style>
+        /* Base Page Setup matching your deep purple theme */
+        body {
+            background-color: #12002b; /* Deep purple background */
+            color: #ffffff;
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            justify-content: center;
+        }
+
+        /* Portfolio Grid container matching your collage flow */
+        .portfolio-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr); /* 2 columns across on larger screens */
+            gap: 20px;
+            max-width: 1200px;
+            width: 100%;
+        }
+
+        /* Individual slide card styling with motion mechanics */
+        .slide-card {
+            background-color: #1a003c; /* Lighter purple card background */
+            border: 1px solid #330066;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.4);
+            
+            /* Motion setup: Smooth transition timing for all movements */
+            transition: transform 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        box-shadow 0.4s cubic-bezier(0.16, 1, 0.3, 1), 
+                        border-color 0.4s ease;
+            
+            /* Fade-in & slide-up animation framework on page load */
+            opacity: 0;
+            transform: translateY(30px);
+            animation: fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+        }
+
+        /* Interactive Dynamic Effects: Activates on hover or mobile finger touch/tap */
+        .slide-card:hover, .slide-card:active {
+            transform: translateY(-8px) scale(1.02); /* Floats slide upwards and scales slightly */
+            box-shadow: 0 12px 30px rgba(138, 43, 226, 0.3); /* Vibrant purple glowing shadow */
+            border-color: #8a2be2; /* Changes border to deep violet neon */
+            cursor: pointer;
+        }
+
+        /* Make images responsive and stretch fully inside their cards */
+        .slide-card img {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+
+        /* CSS Animation keyframe timeline for the smooth page introduction */
+        @keyframes fadeInUp {
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        /* Animation Delays: Staggers each card load so they glide in sequentially */
+        .slide-card:nth-child(1) { animation-delay: 0.05s; }
+        .slide-card:nth-child(2) { animation-delay: 0.10s; }
+        .slide-card:nth-child(3) { animation-delay: 0.15s; }
+        .slide-card:nth-child(4) { animation-delay: 0.20s; }
+        .slide-card:nth-child(5) { animation-delay: 0.25s; }
+        .slide-card:nth-child(6) { animation-delay: 0.30s; }
+        .slide-card:nth-child(7) { animation-delay: 0.35s; }
+        .slide-card:nth-child(8) { animation-delay: 0.40s; }
+        .slide-card:nth-child(9) { animation-delay: 0.45s; }
+        .slide-card:nth-child(10) { animation-delay: 0.50s; }
+
+        /* Mobile Optimization: Changes layout to 1 single column when viewed on a phone */
+        @media (max-width: 768px) {
+            .portfolio-grid {
+                grid-template-columns: 1fr; /* Stacks cards vertically */
+                gap: 16px;
+                padding: 5px;
+            }
+            body {
+                padding: 10px;
+            }
+            /* Tweaks mobile motion to prevent too much vertical screen movement */
+            .slide-card:hover, .slide-card:active {
+                transform: translateY(-4px) scale(1.01);
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- The interactive grid structure containing all your slide image assets -->
+    <div class="portfolio-grid">
+        <div class="slide-card"><img src="slide01.png" alt="Slide 01: UX Research Portfolio Title"></div>
+        <div class="slide-card"><img src="slide02.png" alt="Slide 02: Meet The Researcher"></div>
+        <div class="slide-card"><img src="slide03.png" alt="Slide 03: Services I Offer"></div>
+        <div class="slide-card"><img src="slide04.png" alt="Slide 04: My Research Process"></div>
+        <div class="slide-card"><img src="slide05.png" alt="Slide 05: Featured Project"></div>
+        <div class="slide-card"><img src="slide06.png" alt="Slide 06: Research Insights"></div>
+        <div class="slide-card"><img src="slide07.png" alt="Slide 07: Deliverables You Will Receive"></div>
+        <div class="slide-card"><img src="slide08.png" alt="Slide 08: Skills & Tools"></div>
+        <div class="slide-card"><img src="slide09.png" alt="Slide 09: Why Hire Me?"></div>
+        <div class="slide-card"><img src="slide10.png" alt="Slide 10: Let's Work Together"></div>
+    </div>
+
+</body>
+</html>
